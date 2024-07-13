@@ -6,10 +6,16 @@
     <RootNamespace>C_PlayersGuide</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Part1\" />
+    <Compile Remove="Part1\**" />
+    <Compile Remove="Part2\**" />
+    <EmbeddedResource Remove="Part1\**" />
+    <EmbeddedResource Remove="Part2\**" />
+    <None Remove="Part1\**" />
+    <None Remove="Part2\**" />
   </ItemGroup>
 
 </Project>
