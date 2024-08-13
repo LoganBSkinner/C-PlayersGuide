@@ -1,18 +1,17 @@
-﻿namespace Grades
+﻿//Main.cs
+
+using System;
+using System.Collections.Generic;
+
+namespace PizzaMaker
 {
-
-    class Program
+    public class Init
     {
-        
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Student student1 = new Student("Patrick", 42);
-            Student student2 = new Student("Spongebob", 97);
+            Pizza pizza = new Pizza();
+            Console.WriteLine("Welcome to Logan's Pizza Parlor.");
 
-            Console.WriteLine(student1.PassedTest());
-            Console.WriteLine(student2.PassedTest());
         }
-
     }
-
 }
