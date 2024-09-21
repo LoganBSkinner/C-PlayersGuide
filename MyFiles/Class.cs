@@ -1,59 +1,63 @@
 ﻿//Class.cs
 
-namespace PizzaMaker
-{
-    public class Pizza
-    {
-            public enum Crust
-            {
-                Thin,
-                Thick,
-                Cauliflower
-            };
-            public enum Sauce
-            {
-                Tomato,
-                Barbecue,
-                Alfredo
-            };
-            public enum Cheese
-            {
-                Mozzarella,
-                Provolone,
-                Gorgonzola
-            };
-            public enum Toppings
-            {
-                Mushrooms,
-                Olives,
-                Peppers,
-                Pepperoni,
-                Pineapple,
-                Anchovies
-            };
-            public int ToppingsCount;
-            public bool isReady;
-            public double TotalPrice;
+using System.ComponentModel.Design;
 
-            public void ChooseCrust()
+namespace VendingMachineManager
+{
+    public class VendingMachine
+    {
+        private string _product;
+        private string[] Menu = new string[5];
+
+        public void UpdateMenu() //method to update the menu.
+        {
+            for (int i = 0; i < Menu.Length; i++)
             {
-                Console.WriteLine("What kind of crust would you like?");
+                Console.WriteLine("You have " + (Menu.Length - i) + " spaces left\n");
+                Console.WriteLine("Enter a product name:\n");
+                _product = Console.ReadLine();
+                if (Menu[i] is null)
+                {
+                    Menu[i] = _product;
+
+                }
+                else if (Menu[i] is null)
+                {
+                    Menu[i] = Menu[i];
+
+                }
+                else
+                {
+                    break;
+                }
+
             }
-            public void ChooseSauce()
+
+        }
+
+        public void ReadMenu() //method to read what the vending machine has. Accepts no parameters.
+        {
+            Console.WriteLine("The vending machine contains the following:\n");
+
+            for (int i = 0; i < Menu.Length; i++)
             {
-                Console.WriteLine("What kind of sauce would you like?");
+                
+                if (Menu[i] is null)
+                {
+                    Console.WriteLine("> EMPTY");
+                    Console.WriteLine("\n");
+                }
+
+                else
+                {
+                    Console.WriteLine("> " + Menu[i]);
+                    Console.WriteLine("\n");
+                }
+
             }
-            public void ChooseCheese()
-            {
-                Console.WriteLine("What kind of cheese would you like?");
-            }
-            public void ChooseToppings()
-            {
-                Console.WriteLine("What kind of toppings would you like?");
-            }
-            public void CalculateTotal()
-            {
-                Console.WriteLine("PLACEHOLDER");
-            }
+
+        }
     }
+
 }
+
